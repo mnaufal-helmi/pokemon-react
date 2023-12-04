@@ -77,7 +77,7 @@ const LoginScreen = () => {
             style={styles.phoneNumberButton}
             onPress={onPhoneNumberButtonPress}>
             <Text style={styles.phoneNumberButtonText}>
-              Login with Phone Number
+              Login with Phone Numbers
             </Text>
           </TouchableOpacity>
         </View>
