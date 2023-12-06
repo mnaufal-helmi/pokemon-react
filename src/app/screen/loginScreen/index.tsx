@@ -59,7 +59,7 @@ const LoginScreen = () => {
         <TouchableOpacity
           style={styles.loginButton}
           onPress={() => {
-            navigation.navigate('Home');
+            navigation.navigate('HomePokemon');
           }}>
           <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>

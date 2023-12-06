@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Splash from './app/screen/splash';
-import Home from './app/screen/Home';
+import HomePokemon from './app/screen/homePokemon';
 import LoginScreen from './app/screen/loginScreen';
 
 const Stack = createNativeStackNavigator();
@@ -15,8 +15,8 @@ function AppNavigation() {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Home"
-        component={Home}
+        name="HomePokemon"
+        component={HomePokemon}
         options={{headerShown: false}}
       />
       <Stack.Screen
