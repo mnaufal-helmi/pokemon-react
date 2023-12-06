@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Splash from './app/screen/splash';
 import HomePokemon from './app/screen/homePokemon';
 import LoginScreen from './app/screen/loginScreen';
+import SearchPokemon from './app/screen/searchPokemon';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,11 @@ function AppNavigation() {
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="SearchPokemon"
+        component={SearchPokemon}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

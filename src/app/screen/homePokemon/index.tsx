@@ -12,10 +12,13 @@ import {
 import Swiper from 'react-native-swiper';
 import axios from 'axios';
 import LinearGradient from 'react-native-linear-gradient';
+import {useNavigation} from '@react-navigation/native';
 
 const HomePokemon = () => {
   const [pokemonDatas, setPokemonDatas] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const navigation = useNavigation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -74,7 +77,10 @@ const HomePokemon = () => {
 
       <View style={styles.cardTitle}>
         <Text style={styles.subCardTitle}>This is our pokemons</Text>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('SearchPokemon');
+          }}>
           <Text style={styles.btnTxt}> See All </Text>
         </TouchableOpacity>
       </View>
