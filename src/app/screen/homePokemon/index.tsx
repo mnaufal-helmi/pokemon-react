@@ -79,9 +79,9 @@ const HomePokemon = () => {
         </TouchableOpacity>
       </View>
 
-      <View style={{backgroundColor: 'cyan'}}>
+      <View style={{backgroundColor: 'rgba(0, 0, 0, 0.1)'}}>
         {loading ? (
-          <ActivityIndicator size={'large'} color={'gray'} />
+          <ActivityIndicator size={'large'} color={'cyan'} />
         ) : (
           <FlatList
             data={pokemonDatas}
@@ -91,7 +91,7 @@ const HomePokemon = () => {
                 <TouchableOpacity style={styles.card}>
                   <View style={styles.borderImage}>
                     <LinearGradient
-                      colors={['gray', 'gray', '#4444']}
+                      colors={['white', 'cyan', 'white']}
                       style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
@@ -120,13 +120,6 @@ const HomePokemon = () => {
                         <Text style={styles.txtBtn}>{ability}</Text>
                       </TouchableOpacity>
                     ))}
-                    {/* <TouchableOpacity style={styles.viewBtn}>
-                      <Text style={styles.txtBtn}>element</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.viewBtn}>
-                      <Text style={styles.txtBtn}> element </Text>
-                    </TouchableOpacity> */}
                   </View>
                 </TouchableOpacity>
               );
@@ -163,7 +156,7 @@ const styles = StyleSheet.create({
     width: 150,
     borderWidth: 1,
     margin: 10,
-    borderColor: 'gray',
+    borderColor: 'cyan',
     borderRadius: 20,
   },
   borderImage: {
@@ -184,9 +177,10 @@ const styles = StyleSheet.create({
   },
   btnTxt: {
     color: 'black',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
   },
   txtItemName: {
-    color: 'white',
+    color: 'rgba(0, 0, 0, 0.6)',
     fontWeight: 'bold',
     fontSize: 15,
     marginHorizontal: 5,
@@ -197,11 +191,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'gray',
+    backgroundColor: 'cyan',
   },
   txtBtn: {
-    color: 'white',
+    color: 'rgba(0, 0, 0, 0.6)',
     fontSize: 12,
+    fontWeight: 'bold',
   },
 });
 
