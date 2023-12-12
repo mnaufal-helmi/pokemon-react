@@ -43,7 +43,7 @@ const Pokemon = () => {
                 ability => ability.ability.name,
                 ability => ability.ability.effect,
               ),
-              characteristic: characteristics.data.description,
+              // characteristic: characteristics.data.description,
               stats: {
                 hp: stats.hp,
                 speed: stats.speed,
@@ -76,8 +76,8 @@ const Pokemon = () => {
 
   const displayedPokemonData = searchText ? filteredPokemonData : pokemonData;
 
-  const handlePokemonClick = (id, name, image) => {
-    navigation.navigate('DetailPokemon', {id, name, image});
+  const handlePokemonClick = (id, name, image, stats, abilities) => {
+    navigation.navigate('DetailPokemon', {id, name, image, stats, abilities});
   };
 
   return (
@@ -96,7 +96,15 @@ const Pokemon = () => {
           numColumns={2}
           renderItem={({item}) => (
             <TouchableOpacity
-              onPress={() => handlePokemonClick(item.id, item.name, item.image)}
+              onPress={() =>
+                handlePokemonClick(
+                  item.id,
+                  item.name,
+                  item.image,
+                  item.stats,
+                  item.abilities,
+                )
+              }
               style={styles.card}>
               <View style={styles.borderImage}>
                 <View style={styles.wrapperTxt}>
