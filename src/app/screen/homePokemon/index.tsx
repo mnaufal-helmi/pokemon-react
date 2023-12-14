@@ -26,7 +26,6 @@ const images = [
   require('../../assets/jpg/background4.jpg'),
 ];
 
-
 const HomePokemon = () => {
   const [pokemonDatas, setPokemonDatas] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -60,7 +59,6 @@ const HomePokemon = () => {
     }
   };
 
->>>>>>> feat/add-HomePokemon
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -116,9 +114,7 @@ const HomePokemon = () => {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('SearchPokemon');
-
           }}>
-          
           <Text style={styles.btnTxt}> See All </Text>
         </TouchableOpacity>
       </View>
