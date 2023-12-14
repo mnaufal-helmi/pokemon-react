@@ -19,10 +19,9 @@ const WelcomeScreen = () => {
         repeat={true}
       />
       <View style={styles.overlay}>
-        {/* Your content over the video */}
-        <Text style={styles.title}>Welcome PokemonXYZ</Text>
+        {/* <Text style={styles.title}>Welcome PokemonXYZ</Text> */}
         <TouchableOpacity style={styles.button} onPress={goToLogin}>
-          <Text style={styles.buttonText}>Get Started</Text>
+          <Text style={styles.buttonText}>Get Started The Apps</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust overlay opacity as needed
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust overlay opacity as needed
   },
   title: {
     fontSize: 24,
@@ -49,7 +48,9 @@ const styles = StyleSheet.create({
   button: {
     paddingVertical: 10,
     paddingHorizontal: 20,
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    borderWidth: 1,
+    borderColor: 'gray',
+    backgroundColor: 'rgba(0, 0, 0, 0.02)',
     borderRadius: 5,
   },
   buttonText: {
