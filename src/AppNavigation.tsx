@@ -5,7 +5,6 @@ import HomePokemon from './app/screen/homePokemon';
 import LoginScreen from './app/screen/loginScreen';
 import SearchPokemon from './app/screen/searchPokemon';
 import DetailPokemonScreen from './app/screen/detailPokemon';
-// import SearchPokemon from './app/screen/searchPokemon';
 
 const Stack = createNativeStackNavigator();
 
