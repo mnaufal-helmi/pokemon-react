@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
+  Dimensions,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
@@ -18,6 +19,7 @@ GoogleSignin.configure({
   webClientId: 'YOUR_WEB_CLIENT_ID_FROM_GOOGLE_CONSOLE',
 });
 
+const window = Dimensions.get('window');
 const LoginScreen = () => {
   const handleGoogleLogin = async () => {
     try {
@@ -96,7 +98,7 @@ const styles = StyleSheet.create({
     fontSize: 35,
     fontWeight: 'bold',
     marginTop: 20,
-    color: 'black',
+    color: 'gray',
   },
   loginContainer: {
     padding: 20,
@@ -113,28 +115,28 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   loginButton: {
-    backgroundColor: '#3498db',
+    backgroundColor: '#921224',
     padding: 10,
     borderRadius: 5,
     alignItems: 'center',
   },
   wrapperButton: {
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: 5,
     justifyContent: 'center',
     alignItems: 'center',
   },
   googleButton: {
-    width: 160,
-    height: 48,
+    width: window.width * 0.45,
+    height: window.height * 0.08,
   },
   loginButtonText: {
     color: '#fff',
     fontWeight: 'bold',
   },
   phoneNumberButton: {
-    height: 43,
-    width: 160,
+    width: window.width * 0.45,
+    height: window.height * 0.075,
     borderWidth: 1,
     borderBottomWidth: 2,
     borderRadius: 5,
