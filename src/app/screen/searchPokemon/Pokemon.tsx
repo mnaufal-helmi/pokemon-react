@@ -43,7 +43,7 @@ const Pokemon = () => {
                 ability => ability.ability.name,
                 ability => ability.ability.effect,
               ),
-              characteristic: characteristics.data.description,
+              // characteristic: characteristics.data.description,
               stats: {
                 hp: stats.hp,
                 speed: stats.speed,
@@ -158,6 +158,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     backgroundColor: '#fff',
+    borderRadius: 20,
+    borderColor: 'rgba(0, 0, 0, 0.1)',
   },
   borderImage: {
     flex: 1,
