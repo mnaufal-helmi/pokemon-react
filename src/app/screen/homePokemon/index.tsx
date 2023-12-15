@@ -120,7 +120,7 @@ const HomePokemon = () => {
         </TouchableOpacity>
       </View>
 
-      <View style={{backgroundColor: 'rgba(0, 0, 0, 0.05)'}}>
+      <View style={styles.wrapperSectionCard}>
         {loading ? (
           <ActivityIndicator size={'large'} color={'cyan'} />
         ) : (
@@ -148,7 +148,7 @@ const HomePokemon = () => {
                           height: window.height * 0.028,
                           width: window.width * 0.3,
                           borderRadius: 10,
-                          borderColor: 'rgba(0, 0, 0, 0.1)',
+                          borderColor: 'rgba(0, 0, 0, 0.3)',
                           justifyContent: 'center',
                           alignItems: 'center',
                           marginBottom: 5,
@@ -212,10 +212,20 @@ const styles = StyleSheet.create({
     margin: 10,
     borderColor: 'rgba(0, 0, 0, 0.1)',
     borderRadius: 20,
-    backgroundColor: 'white',
+    padding: 10,
+    overflow: 'hidden', // Ensure the borderRadius is applied correctly
+    elevation: 6, // Add elevation for shadow (Android)
+    shadowColor: '#000', // Add shadow properties (iOS)
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    backgroundColor: '#fff',
   },
   borderImage: {
     flex: 1,
+  },
+  wrapperSectionCard: {
+    backgroundColor: 'rgba(0, 0, 0, 0.05)',
   },
   cardTitle: {
     flexDirection: 'row',
@@ -237,6 +247,7 @@ const styles = StyleSheet.create({
   },
   searchBtn: {
     backgroundColor: 'rgba(0, 0, 0, 0.09)',
+    borderColor: 'rgba(0, 0, 0, 0.1)',
     height: 25,
     width: 50,
     borderRadius: 10,
@@ -309,7 +320,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 5,
-    backgroundColor: 'white',
+    padding: 10,
+    overflow: 'hidden', // Ensure the borderRadius is applied correctly
+    elevation: 4, // Add elevation for shadow (Android)
+    shadowColor: '#000', // Add shadow properties (iOS)
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    backgroundColor: '#fff',
   },
   txtBtnHabitat: {
     textAlign: 'center',
