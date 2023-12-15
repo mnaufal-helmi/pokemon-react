@@ -111,24 +111,30 @@ const DetailPokemonScreen = ({route}) => {
         {/* End Of Secgtion 1  */}
 
         <View style={styles.wrapperBreeding}>
-          <Text style={{textAlign: 'center', fontSize: 20}}> Breeding</Text>
+          <Text
+            style={{
+              textAlign: 'center',
+              fontSize: 22,
+              color: 'brown',
+              fontWeight: 'bold',
+            }}>
+            Breeding
+          </Text>
           <View>
             <View
               style={{
-                height: window.height * 0.1,
-                width: window.width * 0.5,
-                borderWidth: 1,
+                height: window.height * 0.15,
                 flexDirection: 'row',
                 alignItems: 'center',
-                justifyContent: 'space-between',
+                // justifyContent: 'space-around',
               }}>
               <View style={styles.heightBreeding}>
-                <Text>Height</Text>
-                <Text>{height}</Text>
+                <Text style={styles.titleTxt}>Height</Text>
+                <Text style={styles.txtBreeding}>{height}</Text>
               </View>
               <View style={styles.weightBreeding}>
-                <Text>Weight</Text>
-                <Text>{weight}</Text>
+                <Text style={styles.titleTxt}>Weight</Text>
+                <Text style={styles.txtBreeding}>{weight}</Text>
               </View>
             </View>
           </View>
@@ -166,6 +172,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 15,
     marginHorizontal: 10,
+    maxHeight: window.height * 0.2,
+    height: window.height * 0.2,
   },
   wrapperBreeding: {
     borderWidth: 1,
@@ -212,16 +220,22 @@ const styles = StyleSheet.create({
     flex: 1,
     // marginRight: 10,
   },
+  txtBreeding: {
+    color: 'brown',
+    fontWeight: 'bold',
+  },
   rightSection: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // borderWidth: 1,
     height: '70%',
     width: '60%',
   },
   statsContainer: {
     // marginTop: 10,
+  },
+  titleTxt: {
+    color: 'gray',
   },
   statContainer: {
     alignItems: 'flex-start',
@@ -279,25 +293,31 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
   },
   heightBreeding: {
-    height: 30,
-    width: 70,
+    height: 60,
+    width: 120,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
+    marginRight: 10,
+    borderRadius: 15,
+    borderColor: 'rgba(0, 0, 0, 0.2)',
   },
   weightBreeding: {
-    height: 30,
-    width: 70,
+    height: 60,
+    width: 120,
     borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 15,
+    borderColor: 'rgba(0, 0, 0, 0.2)',
   },
   txtDescription: {
     fontSize: 15,
     fontFamily: '',
     maxWidth: '100%',
-    textAlign: 'center',
+    textAlign: 'justify',
     marginHorizontal: 10,
+    color: 'maroon',
     textTransform: 'capitalize',
   },
   txtElement: {
@@ -306,9 +326,11 @@ const styles = StyleSheet.create({
   },
   txtAboutPokemon: {
     fontSize: 20,
+    color: 'maroon',
     textAlign: 'center',
     fontWeight: 'bold',
-    marginVertical: 5,
+    marginVertical: 10,
+    maxHeight: window.height * 0.9,
   },
 });
 
