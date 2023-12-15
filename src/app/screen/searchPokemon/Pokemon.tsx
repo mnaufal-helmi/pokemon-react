@@ -85,6 +85,10 @@ const Pokemon = () => {
               colors: typeColors,
               height: details.data.height,
               weight: details.data.weight,
+              abilities: details.data.abilities.map(
+                ability => ability.ability.name,
+                ability => ability.ability.effect,
+              ),
               // characteristic: characteristics.data.description,
               stats: {
                 hp: stats.hp,
@@ -228,6 +232,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     backgroundColor: '#fff',
+    borderRadius: 20,
+    borderColor: 'rgba(0, 0, 0, 0.1)',
   },
   borderImage: {
     flex: 1,
