@@ -115,13 +115,15 @@ const HomePokemon = () => {
           onPress={() => {
             navigation.navigate('SearchPokemon');
           }}>
-          <Text style={styles.btnTxt}> See All </Text>
+          <View style={styles.btnSeeAll}>
+            <Text style={styles.btnTxt}> See All </Text>
+          </View>
         </TouchableOpacity>
       </View>
 
       <View style={styles.wrapperSectionCard}>
         {loading ? (
-          <ActivityIndicator size={'large'} color={'cyan'} />
+          <ActivityIndicator size={'large'} color={'maroon'} />
         ) : (
           <FlatList
             data={pokemonDatas}
@@ -233,7 +235,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   subCardTitle: {
-    color: 'black',
+    color: 'maroon',
     fontWeight: 'bold',
     fontSize: 17,
   },
@@ -254,8 +256,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btnTxt: {
-    color: 'black',
+    color: 'white',
     // fontWeight: 'bold',
+  },
+  btnSeeAll: {
+    height: 30,
+    width: 65,
+    backgroundColor: 'maroon',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+    borderColor: 'rgba(0, 0, 0, 0.1)',
   },
   btnView: {
     flexDirection: 'row',
@@ -299,7 +310,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   txtHeader: {
-    color: 'black',
+    color: 'maroon',
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 20,
