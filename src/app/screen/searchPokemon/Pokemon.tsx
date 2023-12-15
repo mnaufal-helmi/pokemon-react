@@ -20,6 +20,33 @@ const Pokemon = () => {
 
   const navigation = useNavigation();
 
+  const getTypeColor = type => {
+    switch (type) {
+      case 'fire':
+        return '#FF8C00'; // Orange
+      case 'water':
+        return '#6495ED'; // Blue
+      case 'grass':
+        return '#32CD32'; // Green
+      case 'poison':
+        return '#D78BFF'; // Purple
+      case 'rock':
+        return '#3C2317'; // brown
+      case 'ice':
+        return '#B8E7E1'; // aqua
+      case 'flying':
+        return '#B4CDE6'; // aqua --
+      case 'water':
+        return '#2A769A'; // blue
+      case 'electric':
+        return '#F7CA44'; // yellow
+
+      // Add more cases for other types if needed
+      default:
+        return '#808080'; // Default gray color
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,19 +57,34 @@ const Pokemon = () => {
         const pokemonData = await Promise.all(
           results.map(async pokemon => {
             const details = await axios.get(pokemon.url);
+            const types = details.data.types.map(type => type.type.name);
+            const typeColors = types.map(type => getTypeColor(type));
             const stats = details.data.stats.reduce((statsObj, stat) => {
               statsObj[stat.stat.name] = stat.base_stat;
               return statsObj;
             }, {});
 
+            const abilities = await Promise.all(
+              details.data.abilities.map(async ability => {
+                const abilityDetails = await axios.get(ability.ability.url);
+                const effectEntries = abilityDetails.data.effect_entries.map(
+                  entry => entry.effect,
+                );
+                return {
+                  name: ability.ability.name,
+                  effects: effectEntries,
+                };
+              }),
+            );
+
             return {
               id: details.data.id,
               name: details.data.name,
               image: details.data.sprites.front_default,
-              abilities: details.data.abilities.map(
-                ability => ability.ability.name,
-                ability => ability.ability.effect,
-              ),
+              abilities: abilities,
+              colors: typeColors,
+              height: details.data.height,
+              weight: details.data.weight,
               // characteristic: characteristics.data.description,
               stats: {
                 hp: stats.hp,
@@ -76,8 +118,26 @@ const Pokemon = () => {
 
   const displayedPokemonData = searchText ? filteredPokemonData : pokemonData;
 
-  const handlePokemonClick = (id, name, image, stats, abilities) => {
-    navigation.navigate('DetailPokemon', {id, name, image, stats, abilities});
+  const handlePokemonClick = (
+    id,
+    name,
+    image,
+    stats,
+    abilities,
+    colors,
+    height,
+    weight,
+  ) => {
+    navigation.navigate('DetailPokemon', {
+      id,
+      name,
+      image,
+      stats,
+      abilities,
+      colors,
+      height,
+      weight,
+    });
   };
 
   return (
@@ -93,7 +153,6 @@ const Pokemon = () => {
       ) : (
         <FlatList
           data={displayedPokemonData}
-          numColumns={2}
           renderItem={({item}) => (
             <TouchableOpacity
               onPress={() =>
@@ -103,6 +162,9 @@ const Pokemon = () => {
                   item.image,
                   item.stats,
                   item.abilities,
+                  item.colors,
+                  item.height,
+                  item.weight,
                 )
               }
               style={styles.card}>
