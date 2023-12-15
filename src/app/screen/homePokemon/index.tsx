@@ -145,7 +145,7 @@ const HomePokemon = () => {
                       <TouchableOpacity
                         key={index}
                         style={{
-                          height: window.height * 0.023,
+                          height: window.height * 0.028,
                           width: window.width * 0.3,
                           borderRadius: 10,
                           borderColor: 'rgba(0, 0, 0, 0.1)',
