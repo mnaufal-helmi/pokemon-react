@@ -44,7 +44,7 @@ const LoginScreen = () => {
       renderForeground={() => (
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
           <Image
-            source={require('../../assets/jpg/login.jpg')}
+            source={require('../../assets/png/login.png')}
             style={styles.headerImage}
           />
           <Text style={styles.headerText}>Login Account</Text>
