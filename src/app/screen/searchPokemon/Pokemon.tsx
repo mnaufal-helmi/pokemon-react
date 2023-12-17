@@ -85,10 +85,6 @@ const Pokemon = () => {
               colors: typeColors,
               height: details.data.height,
               weight: details.data.weight,
-              abilities: details.data.abilities.map(
-                ability => ability.ability.name,
-                ability => ability.ability.effect,
-              ),
               // characteristic: characteristics.data.description,
               stats: {
                 hp: stats.hp,
