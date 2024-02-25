@@ -1,5 +1,9 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+>**FYI**: This Application maybe can slowly when you run it for the first time, because that code make highest resource, and this is my fault when i consume data on Pokemon API for placement end point is only in one componen so i use props for parsing data that end point not to create state management redux or context for the API, maybe later can adjust the code. 
+
+>**DOC-API**: here for doc API pokemon : https://pokeapi.co/docs/v2?_x_tr_hist=true#info 
+
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
