@@ -1,0 +1,12 @@
+version: '3'
+services:
+  pokemonxyz:
+    image: pokemonxyz-app
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - '8081:8081'
+    environment:
+      - NODE_ENV=development
+    command: yarn start
