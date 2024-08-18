@@ -1,7 +1,7 @@
 version: '3'
 services:
   pokemonxyz:
-    image: pokemonxyz-app
+    image: PokemonXyz
     build: .
     volumes:
       - .:/app

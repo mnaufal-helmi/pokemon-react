@@ -1,8 +1,8 @@
-# Menggunakan image resmi Node.js sebagai base image
-FROM node:18
+# Menggunakan base image Ubuntu
+FROM ubuntu:20.04
 
-# Install dependensi yang dibutuhkan untuk React Native
-RUN apt-get update && apt-get install -y \
+# Install dependensi yang dibutuhkan
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   git \
   openjdk-11-jdk \
   curl \
@@ -27,11 +27,11 @@ RUN yes | sdkmanager --licenses && \
 # Set working directory
 WORKDIR /app
 
-# Copy file package.json dan package-lock.json untuk menginstall dependensi
-COPY package*.json ./
+# Copy file package.json dan yarn.lock
+COPY package.json yarn.lock ./
 
-# Install dependensi aplikasi
-RUN npm install
+# Install dependensi aplikasi menggunakan Yarn
+RUN yarn install
 
 # Copy seluruh kode aplikasi ke dalam container
 COPY . .
